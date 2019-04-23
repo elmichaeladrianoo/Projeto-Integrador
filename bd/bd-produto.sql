@@ -3,8 +3,8 @@ CREATE DATABASE `projetoproduto`;
 USE `projetoproduto`;
 
 CREATE TABLE `alteracao` (
-  `idalteracao` int(11) NOT NULL,
-  `idProduto` int(11) NOT NULL,
+  `idalteracao` varchar(11) NOT NULL,
+  `idProduto` varchar(11) NOT NULL,
   `nomeCampo` varchar(45) NOT NULL,
   `dataAlteracao` date NOT NULL,
   `valor` varchar(45) NOT NULL,
@@ -15,31 +15,31 @@ CREATE TABLE `alteracao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `atributo` (
-  `idatributo` int(11) NOT NULL,
+  `idatributo` varchar(11) NOT NULL,
   `nomeAtributo` varchar(45) NOT NULL,
   PRIMARY KEY (`idatributo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `categoria` (
-  `idcategoria` int(11) NOT NULL,
+  `idcategoria` varchar(11) NOT NULL,
   `nomeCategoria` varchar(45) NOT NULL,
   PRIMARY KEY (`idcategoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `marca` (
-  `idmarca` int(11) NOT NULL,
+  `idmarca` varchar(11) NOT NULL,
   `nomeMarca` varchar(45) NOT NULL,
   PRIMARY KEY (`idmarca`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `modelo` (
-  `idmodelo` int(11) NOT NULL,
+  `idmodelo` varchar(11) NOT NULL,
   `nomeModelo` varchar(45) NOT NULL,
   PRIMARY KEY (`idmodelo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `produto` (
-  `idproduto` int(11) NOT NULL,
+  `idproduto` varchar(11) NOT NULL,
   `nomeProduto` varchar(45) NOT NULL,
   `precoProduto` varchar(45) NOT NULL,
   `marca` varchar(45) NOT NULL,
@@ -51,9 +51,9 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `produtoatributo` (
-  `idprodutoAtributo` int(11) NOT NULL,
-  `idProduto` int(11) NOT NULL,
-  `idAtributo` int(11) NOT NULL,
+  `idprodutoAtributo` varchar(11) NOT NULL,
+  `idProduto` varchar(11) NOT NULL,
+  `idAtributo` varchar(11) NOT NULL,
   `valor` varchar(45) NOT NULL,
   PRIMARY KEY (`idprodutoAtributo`),
   KEY `FKProduto2` (`idProduto`),
